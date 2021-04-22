@@ -27,6 +27,16 @@ namespace code
             {
                 Console.Write(item + ",");
             }
+
+            Person person = new Person();
+            person.Name = "wjc";
+            Console.WriteLine(person.Name);
+
+            //扩展方法可继承
+            TestExtandMethodA a = new TestExtandMethodA();
+            a.ping();
+            TestExtandMethod b = new TestExtandMethodA();
+            b.ping();
         }
 
         private static IEnumerable<T> qSort<T>(IEnumerable<T> list) where T : IComparable<T>
@@ -40,6 +50,58 @@ namespace code
             var middle = list.Where(x => x.CompareTo(pivot) == 0);
 
             return left.Concat(middle).Concat(right);
+        }
+    }
+
+    public class Person : IBehaves
+    {
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { this.name = value; }
+        }
+        public int compute(int a, int b)
+        {
+            return a + b;
+        }
+
+        public override string ToString()
+        {
+            return name;
+        }
+    }
+
+    public interface IBehaves
+    {
+        int compute(int a, int b);
+    }
+
+    abstract class TestExtandMethod
+    {
+        string name;
+        public string Name => name;
+
+        //抽象类不适合包含公共的非静态方法，因为不会被实例化，永远都不会调用。
+        public override string ToString()
+        {
+            return "父类" + name;
+        }
+    }
+
+    class TestExtandMethodA : TestExtandMethod
+    {
+        public override string ToString()
+        {
+            return "子类" + Name;
+        }
+    }
+
+    static class ExtendHelper
+    {
+        public static void ping(this TestExtandMethod test)
+        {
+            Console.WriteLine(test.ToString());
         }
     }
 }
