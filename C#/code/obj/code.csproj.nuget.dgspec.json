@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/wangjicheng/Documents/NET/C#/code/code.csproj": {}
+  },
+  "projects": {
+    "/Users/wangjicheng/Documents/NET/C#/code/code.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/wangjicheng/Documents/NET/C#/code/code.csproj",
+        "projectName": "code",
+        "projectPath": "/Users/wangjicheng/Documents/NET/C#/code/code.csproj",
+        "packagesPath": "/Users/wangjicheng/.nuget/packages/",
+        "outputPath": "/Users/wangjicheng/Documents/NET/C#/code/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/wangjicheng/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

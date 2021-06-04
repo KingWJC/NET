@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace code
 {
     class Program
@@ -9,6 +10,12 @@ namespace code
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            StaticDemo<int>.x = 10;
+            StaticDemo<string>.x = 20;
+            Console.WriteLine(StaticDemo<int>.x);
+
+            IIndex<TestExtandMethod> temp = new RecCollection();
 
             int[] array = new int[10];
             Random random = new Random();
@@ -53,6 +60,27 @@ namespace code
         }
     }
 
+    public class StaticDemo<T>
+    {
+        public static int x;
+    }
+
+    public interface IIndex<out T>
+    {
+        T this[int index] { get; }
+    }
+
+    public class RecCollection : IIndex<TestExtandMethodA>
+    {
+        public TestExtandMethodA this[int index]
+        {
+            get
+            {
+                return new TestExtandMethodA();
+            }
+        }
+    }
+
     public class Person : IBehaves
     {
         private string name;
@@ -77,7 +105,7 @@ namespace code
         int compute(int a, int b);
     }
 
-    abstract class TestExtandMethod
+    public abstract class TestExtandMethod
     {
         string name;
         public string Name => name;
@@ -89,7 +117,7 @@ namespace code
         }
     }
 
-    class TestExtandMethodA : TestExtandMethod
+    public class TestExtandMethodA : TestExtandMethod
     {
         public override string ToString()
         {
