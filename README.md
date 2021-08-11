@@ -1,4 +1,38 @@
 # .NET
+
+手写IOC容器
+
+ADO.NET
+
+ASP.NET MVC
+
+ORM: EF, SqlSugar
+
+Web API
+
+ASP.NET Core、EFCore、Core WebAP
+
+MySQL数据库调优、Redis、MongoDB、RabbitMQ、Kafka等高并发中间件
+
+熟悉微服务架构、熟悉Docker&Kubernetes容器技术，熟悉CI/CD
+
+.NET5+Docker落地微服务架构
+
+- C#图解教程(第五版) **(5星推荐入门教程)**
+- C#高级编程
+- CLR via C#  **(很厚很厚的书，可以看做工具书使用)**
+- ASP.NET MVC 5高级编程
+- 《深入浅出ASP.NET Core》
+
+- 菜鸟教程（https://www.runoob.com/csharp/csharp-tutorial.html）
+- 微软官方文档(https://docs.microsoft.com/zh-cn/dotnet/)
+- https://docs.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/types
+- 全网最全MVC教程汇总(https://www.cnblogs.com/mq0036/p/9008969.html) ，其中的ASP.NET MVC 小牛之路系列可以重点看看，对你理解MVC实战很有帮助。
+- 2021新版Asp.Net MVC | 入门到精通自学必备最全实战教程(2021新版Asp.Net MVC | 入门到精通自学必备最全实战教程（C#/.NET入门教程/.Net Core/程序员/编程）B0222_哔哩哔哩_bilibili)
+- 关于ASP.NET Core的分享之路(壹佰文章最全总结| 《关于ASP.NETCore的分享之路》 - 老张的哲学 - 博客园 (cnblogs.com))
+- 系列一：ASP.NET Core学习视频教程(Blog.Core项目)(系列一、ASP.NET Core 学习视频教程（Blog.Core）_哔哩哔哩_bilibili)
+- ASP.NET Core合集(ASP.NET Core合集_哔哩哔哩_bilibili)
+
 # [ASP.NET](http://ASP.NET) Core 开发者指南
 
 > 2019 年 [ASP.NET](http://ASP.NET) Core 开发者指南:
