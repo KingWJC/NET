@@ -20,25 +20,30 @@ namespace code
     public class DelegateRef
     {
         public delegate void referenceDelegate();
-        static void Main(string[] args)
+        public static void Test()
         {
+            "Delegate Method Invoked".WriteTemplate();
             Target target = new Target();
+            //实例方法
             referenceDelegate instanceMethod = target.instanceMethod;
-            Console.Write(instanceMethod.Target == null);
+            instanceMethod();
+            Console.WriteLine(instanceMethod.Target == target);
+            //静态方法
             referenceDelegate staticMethod = Target.staticMethod;
-            Console.Write(staticMethod.Target == target);
+            staticMethod.Invoke();
+            Console.WriteLine(staticMethod.Target == null);
         }
     }
     class Target
     {
         public static void staticMethod()
         {
-            Console.WriteLine("this is a static method. Target of delegate is null.");
+            Console.Write("this is a static method. Target of delegate is null : ");
         }
 
         public void instanceMethod()
         {
-            Console.WriteLine("this is a instance method. Target of delegate is target");
+            Console.Write("this is a instance method. Target of delegate is target : ");
         }
     }
 }

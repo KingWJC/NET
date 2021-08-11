@@ -4,7 +4,7 @@ using System.Threading;
 public class Deadlock
 {
     static readonly object _lock1 = new object();
-    public static void Main(string [] args)
+    public static void Test()
     {
             lock (_lock1)
             {
