@@ -11,6 +11,8 @@ namespace code
             DelegateRef.Test();
 
             ExtensionMethod.Test();
+
+            DelegateObserver.Test();
         }
     }
 }
