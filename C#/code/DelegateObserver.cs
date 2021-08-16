@@ -25,7 +25,7 @@ namespace code
             heater.BoiledWater();
         }
     }
-
+    /* 烧水壶 */
     class Heater
     {
         public string Type { get; set; } = "RealFire 001";
@@ -47,14 +47,14 @@ namespace code
             for (int i = 0; i < 100; i++)
             {
                 temperature = i;
-                if (temperature > 95)
+                if (temperature > 97)
                 {
                     OnBoiled(new BoiledEventArgs(temperature));
                 }
             }
         }
     }
-
+    /* 事件数据 */
     class BoiledEventArgs : EventArgs
     {
         public int Temperature { get; set; }
@@ -64,7 +64,7 @@ namespace code
             Temperature = temp;
         }
     }
-
+    /* 警报器 */
     class Alarm
     {
         public void MakeAlarm(object sender, BoiledEventArgs e)
@@ -75,7 +75,7 @@ namespace code
             Console.WriteLine();
         }
     }
-
+    /* 显示器 */
     class Display
     {
         public static void MakeDisplay(object sender, BoiledEventArgs e)
