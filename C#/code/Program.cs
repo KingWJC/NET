@@ -9,10 +9,6 @@ namespace code
             /*
             Console.WriteLine("Hello World!");
 
-            DelegateRef.Test();
-
-            DelegateObserver.Test();
-
             ObjectsAndTypes.Test();
 
             Inheritance.Test();
@@ -29,10 +25,14 @@ namespace code
 
             Generics.Test();
 
-            GenericsConvariance.Test();*/
+            GenericsConvariance.Test();
+            
+                        DelegateRef.Test();
 
-            OperatorsAndCast.Test();
+            DelegateObserver.Test();
+            OperatorsAndCast.Test();*/
 
+            DelegateSample.Test();
         }
     }
 }
