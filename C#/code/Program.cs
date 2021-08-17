@@ -27,9 +27,11 @@ namespace code
 
             Pointer.QuickArray();
 
-            Generics.Test();*/
+            Generics.Test();
 
-            GenericsConvariance.Test();
+            GenericsConvariance.Test();*/
+
+            OperatorsAndCast.Test();
 
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace code
 {
@@ -74,5 +75,37 @@ namespace code
             }
             return Name.CompareTo(sutdent.Name);
         }
+    }
+
+    /* 
+     * 复合情况
+     * 类型参数T，定义为协变后，只能做返回值。
+     * 无法适用于不可变的类型参数，如IList<T>
+     * 会被其它接口的定义所覆盖。
+     */
+    public interface ICovariantDemo<out T>
+    {
+        //变型无效: 类型参数“T”必须是在“ICovariantDemo<T>.SetAnIList(IList<T>)”上有效的 固定式。“T”为 协变
+        // void SetAnIList(IList<T> list); // 编译错误
+        // IList<T> GetAnIList(); // 编译错误
+
+        //变型无效: 类型参数“T”必须是在“ICovariantDemo<T>.SetAnItem(T)”上有效的 逆变式。“T”为 协变。
+        // void SetAnItem(T v); // 编译错误
+        // IContravarianceDemo<T> GetACotraInterface(); // 编译错误
+        // void SetACoInterface(ICovariantDemo<T> a); // 编译错误
+        // void GetAnItemFromDelegate(Func<T> f); // 编译错误
+        // Action<T> DoSthLater(); // 编译错误
+
+        // 正确的使用
+        T GetAnItem();
+        ICovariantDemo<T> GetACoInterface();
+        void SetAContraInterface(IContravarianceDemo<T> a);
+        Func<T> GetAnItemLater();
+        void DoSth(Action<T> a);
+    }
+
+    public interface IContravarianceDemo<in T>
+    {
+
     }
 }
