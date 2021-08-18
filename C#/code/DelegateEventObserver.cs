@@ -2,9 +2,9 @@
  * @Author: KingWJC
  * @Date: 2021-08-12 16:32:22
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-08-12 17:18:17
+ * @LastEditTime: 2021-08-18 10:28:46
  * @Descripttion: 
- * @FilePath: \code\DelegateObserver.cs
+ * @FilePath: \code\DelegateEventObserver.cs
  * 
  * 委托、事件与Observer设计模式
  *
@@ -13,7 +13,7 @@ using System;
 
 namespace code
 {
-    public class DelegateObserver
+    public class DelegateEventObserver
     {
         public static void Test()
         {
