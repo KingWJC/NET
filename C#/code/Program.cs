@@ -31,10 +31,12 @@ namespace code
 
             DelegateObserver.Test();
             OperatorsAndCast.Test();
-            DelegateSample.Test();*/
+            DelegateSample.Test();
 
 
-            StringAndRegularEx.Test();
+            StringAndRegularEx.Test();*/
+
+            CollectionsSample.Test();
         }
     }
 }

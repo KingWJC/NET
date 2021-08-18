@@ -15,7 +15,7 @@ namespace code
             Console.WriteLine($"int class : {GenericClass<int>.Name}, string class : {GenericClass<string>.Name}");
 
             "双向泛型链表".WriteTemplate();
-            var list3 = new LinkedList<string>();
+            var list3 = new LinkedListCus<string>();
             list3.AddLast("2");
             list3.AddLast("four");
             list3.AddLast("foo");
@@ -32,7 +32,7 @@ namespace code
             test.Foo("abc", 42);
             test.Foo(33, "abc");
             test.Bar(44); //运行时，找泛型参数的
-            test.Foo(new List<LinkedListNode<int>>());
+            test.Foo(new List<LinkedListNodeCus<int>>());
             test.Foo<string>(new List<string>());
             test.Foo(new List<string>());
 
@@ -67,27 +67,27 @@ namespace code
     }
 
     /* 泛型类 - 链表元素 */
-    class LinkedListNode<T>
+    class LinkedListNodeCus<T>
     {
         public T Value { get; set; }
-        public LinkedListNode<T> Prev { get; set; }
-        public LinkedListNode<T> Next { get; set; }
+        public LinkedListNodeCus<T> Prev { get; set; }
+        public LinkedListNodeCus<T> Next { get; set; }
 
-        public LinkedListNode(T value)
+        public LinkedListNodeCus(T value)
         {
             Value = value;
         }
     }
 
     /* 泛型类 - 双向链表 */
-    class LinkedList<T> : IEnumerable<T>
+    class LinkedListCus<T> : IEnumerable<T>
     {
-        public LinkedListNode<T> FirstNode { get; set; }
-        public LinkedListNode<T> LastNode { get; set; }
+        public LinkedListNodeCus<T> FirstNode { get; set; }
+        public LinkedListNodeCus<T> LastNode { get; set; }
 
-        public LinkedListNode<T> AddLast(T value)
+        public LinkedListNodeCus<T> AddLast(T value)
         {
-            var newNode = new LinkedListNode<T>(value);
+            var newNode = new LinkedListNodeCus<T>(value);
             if (FirstNode != null)
             {
                 LastNode.Next = newNode;
@@ -104,7 +104,7 @@ namespace code
 
         public IEnumerator<T> GetEnumerator()
         {
-            LinkedListNode<T> current = FirstNode;
+            LinkedListNodeCus<T> current = FirstNode;
             while (current != null)
             {
                 yield return current.Value;
