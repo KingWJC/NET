@@ -20,10 +20,41 @@ namespace code.programs.documentpriority
 
         public void Add(Document document)
         {
-            if (_priority[document.Priority].Value == null)
+            AddPriority(document, document.Priority);
+        }
+
+        private void AddPriority(Document document, int priority)
+        {
+            if (_priority[priority].Value == null)
             {
-                _priority[document.Priority].Value = document;
-                _docList.AddLast(document);
+                --priority;
+                if (priority >= 0)
+                {
+                    AddPriority(document, priority);
+                }
+                else
+                {
+                    var node = _docList.AddLast(document);
+                    _priority[document.Priority] = node;
+                }
+                return;
+            }
+            else
+            {
+                LinkedListNode<Document> preNode = _priority[priority];
+                if (priority == document.Priority)
+                {
+                    _docList.AddAfter(preNode, document);
+                    _priority[priority] = preNode.Next;
+                }
+                else
+                {
+                    while (preNode.Previous != null && preNode.Value.Priority == preNode.Previous.Value.Priority)
+                    {
+                        preNode = preNode.Previous;
+                    }
+                    _priority[document.Priority] = _docList.AddBefore(preNode, document);
+                }
             }
         }
 

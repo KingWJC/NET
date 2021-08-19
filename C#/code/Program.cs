@@ -38,6 +38,7 @@ namespace code
             /* 小程序
             Observer.Test();
 
+            code.programs.documentconsume.Client.Test();
             */
 
             /* 知识点
@@ -49,8 +50,8 @@ namespace code
 
             Deadlock.Test();
             */
-
-            code.programs.documentconsume.Client.Test();
+   
+            code.programs.documentpriority.Client.Test();
         }
     }
 
