@@ -1,6 +1,6 @@
 using static System.Console;
 
-namespace code
+namespace code.sample
 {
     public class Pointer
     {

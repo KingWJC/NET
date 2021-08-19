@@ -1,7 +1,7 @@
 using System;
 using static System.Console;
 
-namespace code
+namespace code.sample
 {
     public class ObjectsAndTypes
     {
@@ -101,12 +101,6 @@ namespace code
     static class StringExtension
     {
         public static int GetWordCount(this string s) => s.Split().Length;
-
-        public static void WriteTemplate(this string s)
-        {
-            WriteLine();
-            WriteLine($"===================={s}==================");
-        }
     }
 
     /* 枚举 */

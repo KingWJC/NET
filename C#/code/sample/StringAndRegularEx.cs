@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using static System.Console;
 
-namespace code
+namespace code.sample
 {
     public class StringAndRegularEx
     {

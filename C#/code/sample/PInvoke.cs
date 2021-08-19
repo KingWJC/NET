@@ -9,7 +9,7 @@ using System.Security.Permissions;
 /* 
  * 平台调用非托管的方法 
 */
-namespace code
+namespace code.sample
 {
     public class PInvoke
     {

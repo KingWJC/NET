@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using static System.Console;
 
-namespace code
+namespace code.sample
 {
     public class DisposableSample
     {

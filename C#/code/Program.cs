@@ -1,4 +1,7 @@
 ﻿using System;
+using code.sample;
+using code.programs;
+using static System.Console;
 
 namespace code
 {
@@ -6,14 +9,13 @@ namespace code
     {
         static void Main(string[] args)
         {
-            /*
+
             Console.WriteLine("Hello World!");
 
+            /* 样例
             ObjectsAndTypes.Test();
 
             Inheritance.Test();
-
-            LinqSort.Test();
 
             DisposableSample.Test();
 
@@ -25,18 +27,39 @@ namespace code
 
             Generics.Test();
 
-            GenericsConvariance.Test();
-            
-                        DelegateRef.Test();
-
-            DelegateObserver.Test();
             OperatorsAndCast.Test();
+
             DelegateSample.Test();
 
+            StringAndRegularEx.Test();
 
-            StringAndRegularEx.Test();*/
+            CollectionsSample.Test();*/
 
-            CollectionsSample.Test();
+            /* 小程序
+            Observer.Test();
+
+            */
+
+            /* 知识点
+            GenericsConvariance.Test();
+
+            DelegateRef.Test();
+
+            LinqSort.Test();
+
+            Deadlock.Test();
+            */
+
+            code.programs.documentconsume.Client.Test();
+        }
+    }
+
+    static class StringExtension
+    {
+        public static void WriteTemplate(this string s)
+        {
+            WriteLine();
+            WriteLine($"===================={s}==================");
         }
     }
 }

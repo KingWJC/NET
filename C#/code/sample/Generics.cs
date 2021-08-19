@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using static System.Console;
 
-namespace code
+namespace code.sample
 {
     public class Generics
     {

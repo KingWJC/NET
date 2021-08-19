@@ -2,9 +2,9 @@
  * @Author: KingWJC
  * @Date: 2021-08-18 13:48:22
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-08-18 17:44:23
+ * @LastEditTime: 2021-08-19 13:58:35
  * @Descripttion: 
- * @FilePath: \code\CollectionsSample.cs
+ * @FilePath: \code\sample\CollectionsSample.cs
  *
  * 比较时，需要判断比较对象是否为空。
  *
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Collections.Generic;
 using static System.Console;
 
-namespace code
+namespace code.sample
 {
     public class CollectionsSample
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace code
+namespace code.sample
 {
     public class DelegateSample
     {
