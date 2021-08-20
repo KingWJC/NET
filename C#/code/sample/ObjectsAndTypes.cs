@@ -17,7 +17,7 @@ namespace code.sample
             int wordCount = fox.GetWordCount();
             WriteLine($"<{fox}> has {wordCount} words");
 
-            "枚举方法,获取项".WriteTemplate();
+            "枚举方法,转换和获取项".WriteTemplate();
             DaysOfWeek mondayAndWensday = DaysOfWeek.Monday | DaysOfWeek.Wednesday;
             WriteLine("枚举值:" + mondayAndWensday);
             DaysOfWeek tuesday;

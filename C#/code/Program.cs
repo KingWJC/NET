@@ -2,6 +2,7 @@
 using code.sample;
 using code.programs;
 using static System.Console;
+using System.IO;
 
 namespace code
 {
@@ -33,12 +34,17 @@ namespace code
 
             StringAndRegularEx.Test();
 
-            CollectionsSample.Test();*/
+            CollectionsSample.Test();
+
+            CollectionSepcial.Test();
+            */
 
             /* 小程序
             Observer.Test();
 
             code.programs.documentconsume.Client.Test();
+
+            code.programs.documentpriority.Client.Test();
             */
 
             /* 知识点
@@ -50,8 +56,8 @@ namespace code
 
             Deadlock.Test();
             */
-   
-            code.programs.documentpriority.Client.Test();
+
+            code.programs.pipelinetask.Clent.Test();
         }
     }
 
