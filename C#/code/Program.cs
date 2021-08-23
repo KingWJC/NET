@@ -45,6 +45,8 @@ namespace code
             code.programs.documentconsume.Client.Test();
 
             code.programs.documentpriority.Client.Test();
+
+            code.programs.pipelinetask.Clent.Test();
             */
 
             /* 知识点
@@ -57,7 +59,7 @@ namespace code
             Deadlock.Test();
             */
 
-            code.programs.pipelinetask.Clent.Test();
+            LinqSample.Test();
         }
     }
 
@@ -67,6 +69,24 @@ namespace code
         {
             WriteLine();
             WriteLine($"===================={s}==================");
+        }
+
+        public static string FirstName(this string name)
+        {
+            int index = name.IndexOf(" ");
+            return name.Substring(0, index);
+        }
+
+        public static string LastName(this string name)
+        {
+            int index = name.IndexOf(" ");
+            return name.Substring(index + 1);
+        }
+
+        public static void Wastetime(this DateTime now, DateTime past)
+        {
+            TimeSpan timeSpan = now.Subtract(past);
+            WriteLine($"Elapsed time : {timeSpan }, in seconds : {timeSpan.TotalSeconds}");
         }
     }
 }
