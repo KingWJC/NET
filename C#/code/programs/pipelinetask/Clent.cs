@@ -2,12 +2,13 @@
  * @Author: KingWJC
  * @Date: 2021-08-20 14:20:12
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-08-20 16:18:19
+ * @LastEditTime: 2021-08-24 10:47:52
  * @Descripttion: 
  * @FilePath: \code\programs\pipelinetask\Clent.cs
  *
- *  BlockingCollection的默认集合类型是ConcurrentQueue.
- *  修改完后，需要执行output.CompleteAdding();，否则任务不结束。
+ * 并发集合示例：多个任务形成管道，处理多个文件，并显示处理后结果。
+ * BlockingCollection的默认集合类型是ConcurrentQueue.
+ * 修改完后，需要执行output.CompleteAdding();，否则任务不结束。
  */
 
 using System.Threading.Tasks;

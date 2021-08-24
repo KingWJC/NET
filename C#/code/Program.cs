@@ -37,6 +37,10 @@ namespace code
             CollectionsSample.Test();
 
             CollectionSepcial.Test();
+
+            LinqSample.Test();
+
+            Exceptions.Test();
             */
 
             /* 小程序
@@ -59,7 +63,7 @@ namespace code
             Deadlock.Test();
             */
 
-            LinqSample.Test();
+            code.programs.solicitcoldcall.Client.Test();
         }
     }
 

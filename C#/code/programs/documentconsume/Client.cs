@@ -2,12 +2,12 @@
  * @Author: KingWJC
  * @Date: 2021-08-19 14:19:51
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-08-19 15:53:46
+ * @LastEditTime: 2021-08-24 10:47:42
  * @Descripttion: 
  * @FilePath: \code\programs\documentconsume\Client.cs
  *
- * 文档的生成和获取。
- * 使用任务实现生产者和消费者。
+ * 队列Queue的示例：文档的生成和获取。
+ * 使用任务实现生产者和消费者模式。
  *
  */
 using System;
