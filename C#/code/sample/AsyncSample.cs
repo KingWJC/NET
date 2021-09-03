@@ -9,15 +9,40 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using static System.Console;
 
 namespace code.sample
 {
     public class AsyncSample
     {
+        const string accessKey = "enter key here";
+        const string uriBase = "https://api.cognitive.microsoft.com/bing/v7.0/search";
+        const string searchTerm = "Microsoft Cognitive Services";
         public static void Test()
         {
-            DelegatePattern();
+            // var client = new WebClient();
+            // client.Headers["Ocp-Apim-Subscription-Key"] = accessKey;
+            // client.Headers["User-Agent"] = "Professional C# Sample App";
+            // client.Headers.Add("Ocp-Apim-Subscription-Key", accessKey);
+            // client.headers.Add("User-Agent", "Professional C# Sample App");
+            // client.Credentials = new NetworkCredential(accessKey, accessKey);
+
+            var client = new HttpWeb();
+            client.Headers["Ocp-Apim-Subscription-Key"] = accessKey;
+            client.Headers["User-Agent"] = "Professional C# Sample App";
+
+            // SearchSync(client);
+
+            // DelegatePattern();
+        }
+
+        private static void SearchSync(WebClient client)
+        {
+            var uriQuery = uriBase + "?q=" + Uri.EscapeDataString(searchTerm);
+            string resp = client.DownloadString(uriQuery);
+            WriteLine(resp);
         }
 
         private static void DelegatePattern()
@@ -47,6 +72,17 @@ namespace code.sample
                 WriteLine(item);
             }
 
+        }
+
+        private static void EventPattern()
+        {
+
+        }
+
+        private struct SearchResult
+        {
+            public string jsonResult;
+            public Dictionary<string, string> releventHeaders;
         }
     }
 }
