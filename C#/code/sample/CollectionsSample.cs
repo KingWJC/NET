@@ -2,11 +2,12 @@
  * @Author: KingWJC
  * @Date: 2021-08-18 13:48:22
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-08-19 13:58:35
+ * @LastEditTime: 2021-09-03 17:16:20
  * @Descripttion: 
  * @FilePath: \code\sample\CollectionsSample.cs
  *
  * 比较时，需要判断比较对象是否为空。
+ * 迭代器中，modCount记录集合修改的次数，next和remove操作之前都会先调用checkForComodification来检查expectedModCount和modCount是否相等, 用于防止多个迭代器遍历集合时，因为修改而造成数据混乱，保证数据唯一性。
  *
  */
 using System;

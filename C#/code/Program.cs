@@ -51,6 +51,8 @@ namespace code
             code.programs.documentpriority.Client.Test();
 
             code.programs.pipelinetask.Clent.Test();
+
+            code.programs.solicitcoldcall.Client.Test();
             */
 
             /* 知识点
@@ -63,7 +65,7 @@ namespace code
             Deadlock.Test();
             */
 
-            code.programs.solicitcoldcall.Client.Test();
+            AsyncSample.Test();
         }
     }
 
