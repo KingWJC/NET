@@ -41,6 +41,8 @@ namespace code
             LinqSample.Test();
 
             Exceptions.Test();
+
+            AsyncSample.Test();
             */
 
             /* 小程序
@@ -65,7 +67,8 @@ namespace code
             Deadlock.Test();
             */
 
-            AsyncSample.Test();
+            
+            ReflectionSample.Test();
         }
     }
 

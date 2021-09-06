@@ -2,7 +2,7 @@
  * @Author: KingWJC
  * @Date: 2021-09-03 17:25:42
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-09-03 17:38:17
+ * @LastEditTime: 2021-09-06 10:35:43
  * @Descripttion: 
  * @FilePath: \code\sample\AsyncSample.cs
  *
@@ -65,7 +65,7 @@ namespace code.sample
                         break;
                 }
 
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     Thread.Sleep(1000);
                     WriteLine(Thread.CurrentThread.ManagedThreadId);
@@ -144,6 +144,7 @@ namespace code.sample
             {
                 downloadString.BeginInvoke("http://www.baidu.com", i, ar =>
                  {
+                     ar.AsyncWaitHandle.WaitOne(100);
                      string resp = downloadString.EndInvoke(ar);
                      addItem.Invoke(resp);
                  }, null);
@@ -218,6 +219,8 @@ namespace code.sample
 
                 Task<string> t1 = GreetingAsync("www");
                 Task<string> t2 = GreetingAsync("wy");
+
+                // await 修饰相当于Task.GetAwaiter().GetResult()的执行，异步等待最终获取异步方法的执行结果。
                 // display the exception information of the first and second task
                 await (taskResult = Task.WhenAll(t1, t2));
                 WriteLine($"Finish both method.\n Result 1: {t1.Result}\n Result2: {t2.Result}");
@@ -229,7 +232,7 @@ namespace code.sample
                 WriteLine($"handled {ex.Message}");
                 foreach (var item in taskResult.Exception.InnerExceptions)
                 {
-                    WriteLine($"inner exception {item.Message}");
+                    WriteLine($"inner exception: {item.Message}");
                 }
             }
         }
@@ -256,6 +259,7 @@ namespace code.sample
         {
             TraceThreadAndTask("running Greeting");
             Task.Delay(3000).Wait();
+            // throw new Exception($"{name} exception");
             return $"Hello {name}";
         }
 
