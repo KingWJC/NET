@@ -2,7 +2,7 @@
  * @Author: KingWJC
  * @Date: 2021-08-24 10:48:26
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-08-24 11:58:28
+ * @LastEditTime: 2021-09-07 11:20:32
  * @Descripttion: 
  * @FilePath: \code\programs\solicitcoldcall\Client.cs
  *
@@ -19,7 +19,7 @@ namespace code.programs.solicitcoldcall
         public static void Test()
         {
             Write("Please type in the name of the file " + "containing the names of the people to be cold called > ");
-            string fileName = "people.txt";//ReadLine();
+            string fileName = "resource\\people.txt";//ReadLine();
             ReadLoop(fileName);
         }
 

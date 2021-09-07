@@ -2,7 +2,7 @@
  * @Author: KingWJC
  * @Date: 2021-09-06 11:04:40
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-09-06 18:06:25
+ * @LastEditTime: 2021-09-07 11:13:27
  * @Descripttion: 
  * @FilePath: \code\sample\ReflectionSample.cs
  */
@@ -52,8 +52,8 @@ namespace code.sample
 
             // 动态实例化类型
             const string libPath = @"E:\github\NET\C#\code\bin\Debug\netcoreapp3.1\code.dll";
-            const string libName = "code";
-            const string typename = "VectorClass";
+            // const string libName = "code";
+            const string typename = "code.sample.VectorClass";
 
 #if NET46
             Assembly assemblyCode = Assembly.LoadFile(libPath);
@@ -62,10 +62,20 @@ namespace code.sample
 #else
             // .net core
             Assembly assemblyCode = AssemblyLoadContext.Default.LoadFromAssemblyPath(libPath);
+            // typeName必须包含完整的命名空间，否则无效。
             Type typeVC = assemblyCode.GetType(typename);
-            Object newObj = Activator.CreateInstance(type);
-            WriteLine((newObj as VectorClass).ToString());
 #endif
+            //获取构造函数带参数的实例，并调用方法
+            object[] parameter = new object[] { 10d, 20d };
+            Object newObj = Activator.CreateInstance(typeVC, parameter);
+            object result = typeVC.GetMethod("Sum").Invoke(newObj, null);
+            WriteLine($"Sum Result = {result}");
+
+            // 或者使用构造函数生成，用动态类型调用
+            ConstructorInfo ci = typeVC.GetConstructor(new Type[] { typeof(double), typeof(double) });
+            dynamic vectorClass = ci.Invoke(parameter);
+            double sumResult = vectorClass.Sum();
+            WriteLine($"Sum Result ={sumResult}");
         }
 
         /*

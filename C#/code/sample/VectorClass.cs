@@ -2,7 +2,7 @@
  * @Author: KingWJC
  * @Date: 2021-09-06 17:36:56
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-09-06 17:39:39
+ * @LastEditTime: 2021-09-07 10:24:40
  * @Descripttion: 
  * @FilePath: \code\sample\VectorClass.cs
  *
@@ -53,6 +53,11 @@ namespace code.sample
 
         }
 
+        public double Sum()
+        {
+            return X + Y;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -77,7 +82,7 @@ namespace code.sample
             return !(left == right);
         }
 
-        public override string ToString() => $"({X}, {Y}";
+        public override string ToString() => $"({X}, {Y})";
 
         [LastModified("10 Feb 2010", "Methode added in order to provider formatting support")]
         public string ToString(string format, IFormatProvider provider)

@@ -43,6 +43,8 @@ namespace code
             Exceptions.Test();
 
             AsyncSample.Test();
+
+            ReflectionSample.Test();
             */
 
             /* 小程序
@@ -68,7 +70,7 @@ namespace code
             */
 
             
-            ReflectionSample.Test();
+            DynamicSample.Test();
         }
     }
 
