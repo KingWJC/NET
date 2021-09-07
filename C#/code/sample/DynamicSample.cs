@@ -18,9 +18,11 @@ namespace code.sample
     {
         public static void Test()
         {
+            DLRSTest();
+
             dynamic dynObj;
 
-            WriteLine("First Set : ");
+            WriteLine("\nFirst Set : ");
             dynObj = 100;
             WriteLine(dynObj.GetType());
             WriteLine(dynObj);
@@ -68,16 +70,19 @@ namespace code.sample
          */
         public static void DLRSTest()
         {
+            // 读取App.config文件中的配制
             ScriptRuntime runtime = ScriptRuntime.CreateFromConfiguration();
             ScriptEngine engine = runtime.GetEngine("python");
-            ScriptSource source = engine.CreateScriptSourceFromFile("resource/CountDisc.py");
+            ScriptSource source = engine.CreateScriptSourceFromFile("resources/CountDisc.py");
             ScriptScope scope = engine.CreateScope();
             scope.SetVariable("prodCount", 20);
             scope.SetVariable("amt", 0.3d);
+
+            source.Execute(scope);
             Console.WriteLine(scope.GetVariable("retAmt"));
 
             //直接获取Scope
-            dynamic calcRate = runtime.UseFile("resource/CountDisc.py");
+            dynamic calcRate = runtime.UseFile("resources/CalcTax.py");
             Console.WriteLine(calcRate.CalcTax(10));
         }
     }

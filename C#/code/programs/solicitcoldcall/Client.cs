@@ -19,7 +19,7 @@ namespace code.programs.solicitcoldcall
         public static void Test()
         {
             Write("Please type in the name of the file " + "containing the names of the people to be cold called > ");
-            string fileName = "resource\\people.txt";//ReadLine();
+            string fileName = "resources\\people.txt";//ReadLine();
             ReadLoop(fileName);
         }
 
