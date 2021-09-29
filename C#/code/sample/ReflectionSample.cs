@@ -2,9 +2,18 @@
  * @Author: KingWJC
  * @Date: 2021-09-06 11:04:40
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-09-07 11:13:27
+ * @LastEditTime: 2021-09-26 15:58:31
  * @Descripttion: 
  * @FilePath: \code\sample\ReflectionSample.cs
+ *
+ * 反射：Type对象的类型有：
+ * FieldInfo封装了关于字段的所有信息   （通过Tyep对象的GetFields或GetField方法）
+ * PropertyInfo类型，封装了类型的属性信息；（通过Type对象的GetProperties或GetProperty方法）
+ * ConstructorInfo类型，封装了类型的构造函数信息； （..........）
+ * MethodInfo类型，封装了类型的方法信息；  (........)
+ * MemberInfo类型，封装了类型的所有公共成员；（**就是我们上面说的GetMembers方法**）
+ * EventInfo类型，封装了类型的事件信息；(.......)
+ * ParameterInfo类型，封装了方法和构造函数的参数信息；(........)
  */
 
 using System;
