@@ -1,17 +1,14 @@
 ﻿using System;
-using code.sample;
 using code.programs;
+using code.sample;
 using static System.Console;
 using System.IO;
 
-namespace code
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace code {
+    class Program {
+        static void Main (string[] args) {
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine ("Hello World!");
 
             /* 样例
             ObjectsAndTypes.Test();
@@ -45,6 +42,10 @@ namespace code
             AsyncSample.Test();
 
             ReflectionSample.Test();
+
+            DynamicSample.Test();
+
+            ParallelSample.Test ();
             */
 
             /* 小程序
@@ -69,35 +70,31 @@ namespace code
             Deadlock.Test();
             */
 
-            
-            DynamicSample.Test();
+            TaskSample.Test();
+
+            // ParallelSample.Test ();
         }
     }
 
-    static class StringExtension
-    {
-        public static void WriteTemplate(this string s)
-        {
-            WriteLine();
-            WriteLine($"===================={s}==================");
+    static class StringExtension {
+        public static void WriteTemplate (this string s) {
+            WriteLine ();
+            WriteLine ($"===================={s}==================");
         }
 
-        public static string FirstName(this string name)
-        {
-            int index = name.IndexOf(" ");
-            return name.Substring(0, index);
+        public static string FirstName (this string name) {
+            int index = name.IndexOf (" ");
+            return name.Substring (0, index);
         }
 
-        public static string LastName(this string name)
-        {
-            int index = name.IndexOf(" ");
-            return name.Substring(index + 1);
+        public static string LastName (this string name) {
+            int index = name.IndexOf (" ");
+            return name.Substring (index + 1);
         }
 
-        public static void Wastetime(this DateTime now, DateTime past)
-        {
-            TimeSpan timeSpan = now.Subtract(past);
-            WriteLine($"Elapsed time : {timeSpan }, in seconds : {timeSpan.TotalSeconds}");
+        public static void Wastetime (this DateTime now, DateTime past) {
+            TimeSpan timeSpan = now.Subtract (past);
+            WriteLine ($"Elapsed time : {timeSpan }, in seconds : {timeSpan.TotalSeconds}");
         }
     }
 }

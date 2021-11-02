@@ -110,3 +110,10 @@ dotnet add package [选项] <PACKAGE_NAME>
 2. 修改代码：...node_fetch_1.default(`${versionsUrl}${selectedPackageName}/index.json`, utils_1.getFetchOptions(vscode.workspace.getConfiguration('http')))
 3. 修改后的代码了toLowerCase()方法：...node_fetch_1.default(`${versionsUrl}${selectedPackageName.toLowerCase()}/index.json`, utils_1.getFetchOptions(vscode.workspace.getConfiguration('http')))
 4. 重启vscode问题解决！
+
+### 项目执行
+
+dotnet run报错：System.ComponentModel.Win32Exception (2): 系统找不到指定的文件
+
+原因：需要先编译，dotnet build
+
