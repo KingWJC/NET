@@ -2,13 +2,13 @@
  * @Author: KingWJC
  * @Date: 2021-09-06 17:36:56
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-09-07 10:24:40
+ * @LastEditTime: 2021-11-03 15:22:00
  * @Descripttion: 
  * @FilePath: \code\sample\VectorClass.cs
  *
  * 公共测试类，实现了集合的功能，以及自定义迭代器
  * 包括ToString，HashCode,Equals的重写，运算符的重载，以及IFomattable和IEnumable接口的实现。
- *
+ * 反射中特性的增加
  */
 using System;
 using System.Text;

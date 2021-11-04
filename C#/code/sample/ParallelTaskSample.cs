@@ -2,13 +2,15 @@
  * @Author: KingWJC
  * @Date: 2021-11-01 09:55:59
  * @LastEditors: KingWJC
- * @LastEditTime: 2021-11-02 17:25:54
+ * @LastEditTime: 2021-11-03 11:17:08
  * @Descripttion: 
  * @FilePath: \code\sample\ParallelTaskSample.cs
  *
  * 任务和并行编程(Task,Parallel)
  */
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
@@ -408,13 +410,17 @@ namespace code.sample {
 
     public class DataFlowSample {
         public static void Test () {
-            Task t1 = Task.Run (Producer);
-            Task t2 = Task.Run (async () => await ConsumerAsync ());
-            Task.WaitAll (t1, t2);
+            // Task t1 = Task.Run (Producer);
+            // Task t2 = Task.Run (async () => await ConsumerAsync ());
+            // Task.WaitAll (t1, t2);
+
+            var target = SetPipeline ();
+            target.Post (".\\points");
+            ReadLine();
         }
 
         /*
-         * @description: 实现ISourceBlock,ITargetBlock接口的数据块，可同时做数据源和数据目标
+         * @description: 源和目标数据块：实现ISourceBlock,ITargetBlock接口的数据块，可同时做数据源和数据目标
          */
         private static BufferBlock<string> s_buffer = new BufferBlock<string> ();
 
@@ -444,6 +450,78 @@ namespace code.sample {
             while (true) {
                 string message = await s_buffer.ReceiveAsync ();
                 WriteLine ($"user input {message}");
+            }
+        }
+
+        /*
+         * @description: 连续块，组成数据管道
+         * @param {*}
+         * @return {*}
+         */
+        private static ITargetBlock<string> SetPipeline () {
+            var fileNameForPath = new TransformBlock<string, IEnumerable<string>> (path => {
+                    return GetFileNames (path);
+                });
+            var lines = new TransformBlock<IEnumerable<string>, IEnumerable<string>> (fileNames => {
+                    return LoadLines (fileNames);
+                });
+            var words = new TransformBlock<IEnumerable<string>, IEnumerable<string>> (lines => {
+                    return GetWords (lines);
+                });
+            var display = new ActionBlock<IEnumerable<string>> (words => {
+                foreach (var item in words) {
+                    WriteLine (item);
+                }
+            });
+
+            fileNameForPath.LinkTo (lines);
+            lines.LinkTo (words);
+            words.LinkTo (display);
+
+            return fileNameForPath;
+        }
+
+        /*
+         * @description: 读取目录下的文件
+         * @param {*}
+         * @return {*}
+         */
+        private static IEnumerable<string> GetFileNames (string path) {
+            foreach (var fileName in Directory.EnumerateFiles (path, "*.cs")) {
+                yield return fileName;
+            }
+        }
+
+        /*
+         * @description: 读取文件的内容行
+         * @param {*}
+         * @return {*}
+         */
+        private static IEnumerable<string> LoadLines (IEnumerable<string> fileNames) {
+            foreach (var item in fileNames) {
+                using (FileStream fileStream = File.OpenRead (item)) {
+                    var reader = new StreamReader (fileStream);
+                    string readLine = null;
+                    while ((readLine = reader.ReadLine ()) != null) {
+                        yield return readLine;
+                    }
+                }
+            }
+        }
+
+        /*
+         * @description: 拆分每行内容中的单词
+         * @param {*}
+         * @return {*}
+         */
+        private static IEnumerable<string> GetWords (IEnumerable<string> lines) {
+            foreach (var item in lines) {
+                string[] words = item.Split (' ', ';', '{', '}', '.', ',');
+                foreach (var word in words) {
+                    if (!String.IsNullOrEmpty (word)) {
+                        yield return word;
+                    }
+                }
             }
         }
     }

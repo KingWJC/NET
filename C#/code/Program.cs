@@ -46,6 +46,8 @@ namespace code {
             DynamicSample.Test();
 
             ParallelSample.Test ();
+
+            TaskSample.Test();
             */
 
             /* 小程序
@@ -70,9 +72,7 @@ namespace code {
             Deadlock.Test();
             */
 
-            TaskSample.Test();
-
-            // ParallelSample.Test ();
+            DataFlowSample.Test ();
         }
     }
 
