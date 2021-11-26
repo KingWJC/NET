@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.OpenApi.Models;
+using ADF.IBusiness;
+using ADF.Business;
 
 namespace ADF.WebAPI
 {
@@ -28,6 +30,9 @@ namespace ADF.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.Add(new ServiceDescriptor(typeof(IDataBaseBusiness), typeof(DataBaseBusiness), ServiceLifetime.Singleton));
+            services.Add(new ServiceDescriptor(typeof(IProfessionBussiness), typeof(ProfessionBussiness), ServiceLifetime.Singleton));
 
             //注册Swagger生成器，定义一个和多个Swagger 文档
             services.AddSwaggerGen(s =>

@@ -22,3 +22,16 @@ E:\github\NetCore\ADFCommon\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataA
 E:\github\NetCore\ADFCommon\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.csproj.CopyComplete
 E:\github\NetCore\ADFCommon\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.dll
 E:\github\NetCore\ADFCommon\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.pdb
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.dll
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.pdb
+E:\github\NET\Core\code\03.ADF.DataAccess\bin\Debug\netstandard2.0\ADF.DataAccess.deps.json
+E:\github\NET\Core\code\03.ADF.DataAccess\bin\Debug\netstandard2.0\ADF.DataAccess.dll
+E:\github\NET\Core\code\03.ADF.DataAccess\bin\Debug\netstandard2.0\ADF.DataAccess.pdb
+E:\github\NET\Core\code\03.ADF.DataAccess\bin\Debug\netstandard2.0\ADF.Utility.dll
+E:\github\NET\Core\code\03.ADF.DataAccess\bin\Debug\netstandard2.0\ADF.Utility.pdb
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.csproj.AssemblyReference.cache
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.AssemblyInfoInputs.cache
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.AssemblyInfo.cs
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.csproj.CoreCompileInputs.cache
+E:\github\NET\Core\code\03.ADF.DataAccess\obj\Debug\netstandard2.0\ADF.DataAccess.csproj.CopyComplete

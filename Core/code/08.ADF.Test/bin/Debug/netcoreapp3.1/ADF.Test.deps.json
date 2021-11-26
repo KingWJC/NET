@@ -465,6 +465,14 @@
           }
         }
       },
+      "System.CodeDom/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -721,7 +729,8 @@
       },
       "ADF.IBusiness/1.0.0": {
         "dependencies": {
-          "ADF.DataAccess": "1.0.0"
+          "ADF.DataAccess": "1.0.0",
+          "ADF.Entity": "1.0.0"
         },
         "runtime": {
           "ADF.IBusiness.dll": {}
@@ -734,7 +743,8 @@
           "Microsoft.Extensions.Configuration.FileExtensions": "3.1.4",
           "Microsoft.Extensions.Configuration.Json": "3.1.4",
           "Newtonsoft.Json": "12.0.3",
-          "NodaTime": "3.0.1"
+          "NodaTime": "3.0.1",
+          "System.CodeDom": "5.0.0"
         },
         "runtime": {
           "ADF.Utility.dll": {}
@@ -922,6 +932,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "System.CodeDom/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JPJArwA1kdj8qDAkY2XGjSWoYnqiM7q/3yRNkt6n28Mnn95MuEGkZXUbPBf7qc3IjwrGY5ttQon7yqHZyQJmOQ==",
+      "path": "system.codedom/5.0.0",
+      "hashPath": "system.codedom.5.0.0.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",

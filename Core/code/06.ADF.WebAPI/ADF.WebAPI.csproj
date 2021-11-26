@@ -6,7 +6,9 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\05.Adf.Ibusiness\ADF.IBusiness.csproj" />
+	  <ProjectReference Include="..\02.ADF.Entity\ADF.Entity.csproj" />
+	  <ProjectReference Include="..\04.Adf.Business\ADF.Business.csproj" />
+      <ProjectReference Include="..\05.Adf.IBusiness\ADF.IBusiness.csproj" />
 	</ItemGroup>
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

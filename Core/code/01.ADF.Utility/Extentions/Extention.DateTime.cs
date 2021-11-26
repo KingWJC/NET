@@ -4,7 +4,7 @@ using NodaTime;
 
 namespace ADF.Utility
 {
-    public partial class Extention
+    public static partial class Extention
     {
          ///   <summary> 
         ///  获取某一日期是该年中的第几周

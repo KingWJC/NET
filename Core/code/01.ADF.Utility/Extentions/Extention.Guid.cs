@@ -2,7 +2,7 @@ using System;
 
 namespace ADF.Utility
 {
-    public partial class Extention
+    public static partial class Extention
     {
         /// <summary>
         /// 转为有序的GUID

@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\02.ADF.Entity\ADF.Entity.csproj" />
     <ProjectReference Include="..\03.ADF.DataAccess\ADF.DataAccess.csproj" />
   </ItemGroup>
 

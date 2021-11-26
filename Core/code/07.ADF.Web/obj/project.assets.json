@@ -562,7 +562,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "ADF.DataAccess": "1.0.0"
+          "ADF.DataAccess": "1.0.0",
+          "ADF.Entity": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ADF.IBusiness.dll": {}
@@ -2306,19 +2307,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wangjicheng\\.nuget\\packages\\": {}
+    "C:\\Users\\wangjicheng.BJGOODWILL\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\github\\NET\\ADFCommon\\07.ADF.Web\\ADF.Web.csproj",
+      "projectUniqueName": "E:\\github\\NET\\Core\\code\\07.ADF.Web\\ADF.Web.csproj",
       "projectName": "ADF.Web",
-      "projectPath": "E:\\github\\NET\\ADFCommon\\07.ADF.Web\\ADF.Web.csproj",
-      "packagesPath": "C:\\Users\\wangjicheng\\.nuget\\packages\\",
-      "outputPath": "E:\\github\\NET\\ADFCommon\\07.ADF.Web\\obj\\",
+      "projectPath": "E:\\github\\NET\\Core\\code\\07.ADF.Web\\ADF.Web.csproj",
+      "packagesPath": "C:\\Users\\wangjicheng.BJGOODWILL\\.nuget\\packages\\",
+      "outputPath": "E:\\github\\NET\\Core\\code\\07.ADF.Web\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\wangjicheng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wangjicheng.BJGOODWILL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2330,12 +2336,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\github\\NET\\ADFCommon\\04.Adf.Business\\ADF.Business.csproj": {
-              "projectPath": "E:\\github\\NET\\ADFCommon\\04.Adf.Business\\ADF.Business.csproj"
+            "E:\\github\\NET\\Core\\code\\04.ADF.Business\\ADF.Business.csproj": {
+              "projectPath": "E:\\github\\NET\\Core\\code\\04.ADF.Business\\ADF.Business.csproj"
             },
-            "E:\\github\\NET\\ADFCommon\\05.Adf.IBusiness\\ADF.IBusiness.csproj": {
-              "projectPath": "E:\\github\\NET\\ADFCommon\\05.Adf.IBusiness\\ADF.IBusiness.csproj"
+            "E:\\github\\NET\\Core\\code\\05.ADF.IBusiness\\ADF.IBusiness.csproj": {
+              "projectPath": "E:\\github\\NET\\Core\\code\\05.ADF.IBusiness\\ADF.IBusiness.csproj"
             }
           }
         }
@@ -2348,6 +2355,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -2358,12 +2366,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2372,7 +2374,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

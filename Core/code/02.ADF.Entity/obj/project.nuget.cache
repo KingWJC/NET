@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3205AUoPXrT0EuR4dGRy/0rPaoSgJiaSXkNkS+pMYOuZM95reS3QX1PcgkeCfMa/kkmMHOu8QI9IX3njm21veg==",
+  "dgSpecHash": "YG/72ms09bPLVTaI17goFi3Nl/lzxcqT684aEECEkTwgMZqcQ5pclEtWvzDdSnQeHUMQt/hWKYiG+UOSF5ITGA==",
   "success": true,
-  "projectFilePath": "E:\\github\\NET\\ADFCommon\\02.ADF.Entity\\ADF.Entity.csproj",
+  "projectFilePath": "E:\\github\\NET\\Core\\code\\02.ADF.Entity\\ADF.Entity.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\wangjicheng\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\wangjicheng\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\wangjicheng\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\wangjicheng.BJGOODWILL\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\wangjicheng.BJGOODWILL\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\wangjicheng.BJGOODWILL\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -585,6 +585,23 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "ADF.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "ADF.DataAccess": "1.0.0",
+          "ADF.Entity": "1.0.0",
+          "ADF.IBusiness": "1.0.0",
+          "ADF.Utility": "1.0.0",
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/ADF.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ADF.Business.dll": {}
+        }
+      },
       "ADF.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -602,11 +619,25 @@
           "bin/placeholder/ADF.DataAccess.dll": {}
         }
       },
+      "ADF.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/ADF.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ADF.Entity.dll": {}
+        }
+      },
       "ADF.IBusiness/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "ADF.DataAccess": "1.0.0"
+          "ADF.DataAccess": "1.0.0",
+          "ADF.Entity": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ADF.IBusiness.dll": {}
@@ -2424,15 +2455,25 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "ADF.Business/1.0.0": {
+      "type": "project",
+      "path": "../04.Adf.Business/ADF.Business.csproj",
+      "msbuildProject": "../04.Adf.Business/ADF.Business.csproj"
+    },
     "ADF.DataAccess/1.0.0": {
       "type": "project",
       "path": "../03.ADF.DataAccess/ADF.DataAccess.csproj",
       "msbuildProject": "../03.ADF.DataAccess/ADF.DataAccess.csproj"
     },
+    "ADF.Entity/1.0.0": {
+      "type": "project",
+      "path": "../02.ADF.Entity/ADF.Entity.csproj",
+      "msbuildProject": "../02.ADF.Entity/ADF.Entity.csproj"
+    },
     "ADF.IBusiness/1.0.0": {
       "type": "project",
-      "path": "../05.ADF.IBusiness/ADF.IBusiness.csproj",
-      "msbuildProject": "../05.ADF.IBusiness/ADF.IBusiness.csproj"
+      "path": "../05.Adf.IBusiness/ADF.IBusiness.csproj",
+      "msbuildProject": "../05.Adf.IBusiness/ADF.IBusiness.csproj"
     },
     "ADF.Utility/1.0.0": {
       "type": "project",
@@ -2442,24 +2483,31 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "ADF.Business >= 1.0.0",
+      "ADF.Entity >= 1.0.0",
       "ADF.IBusiness >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wangjicheng\\.nuget\\packages\\": {}
+    "C:\\Users\\wangjicheng.BJGOODWILL\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\github\\NET\\ADFCommon\\06.ADF.WebAPI\\ADF.WebAPI.csproj",
+      "projectUniqueName": "E:\\github\\NET\\Core\\code\\06.ADF.WebAPI\\ADF.WebAPI.csproj",
       "projectName": "ADF.WebAPI",
-      "projectPath": "E:\\github\\NET\\ADFCommon\\06.ADF.WebAPI\\ADF.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\wangjicheng\\.nuget\\packages\\",
-      "outputPath": "E:\\github\\NET\\ADFCommon\\06.ADF.WebAPI\\obj\\",
+      "projectPath": "E:\\github\\NET\\Core\\code\\06.ADF.WebAPI\\ADF.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\wangjicheng.BJGOODWILL\\.nuget\\packages\\",
+      "outputPath": "E:\\github\\NET\\Core\\code\\06.ADF.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\wangjicheng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wangjicheng.BJGOODWILL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2471,9 +2519,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\github\\NET\\ADFCommon\\05.Adf.Ibusiness\\ADF.IBusiness.csproj": {
-              "projectPath": "E:\\github\\NET\\ADFCommon\\05.Adf.Ibusiness\\ADF.IBusiness.csproj"
+            "E:\\github\\NET\\Core\\code\\02.ADF.Entity\\ADF.Entity.csproj": {
+              "projectPath": "E:\\github\\NET\\Core\\code\\02.ADF.Entity\\ADF.Entity.csproj"
+            },
+            "E:\\github\\NET\\Core\\code\\04.Adf.Business\\ADF.Business.csproj": {
+              "projectPath": "E:\\github\\NET\\Core\\code\\04.Adf.Business\\ADF.Business.csproj"
+            },
+            "E:\\github\\NET\\Core\\code\\05.Adf.IBusiness\\ADF.IBusiness.csproj": {
+              "projectPath": "E:\\github\\NET\\Core\\code\\05.Adf.IBusiness\\ADF.IBusiness.csproj"
             }
           }
         }
@@ -2486,6 +2541,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -2502,12 +2558,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2516,7 +2566,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

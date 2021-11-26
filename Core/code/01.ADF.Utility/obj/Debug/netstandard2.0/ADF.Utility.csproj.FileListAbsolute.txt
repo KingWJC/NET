@@ -23,3 +23,13 @@ E:\github\NET\ADFCommon\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.Asse
 E:\github\NET\ADFCommon\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.AssemblyInfo.cs
 E:\github\NET\ADFCommon\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.dll
 E:\github\NET\ADFCommon\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.pdb
+E:\github\NET\Core\code\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.csproj.AssemblyReference.cache
+E:\github\NET\Core\code\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.GeneratedMSBuildEditorConfig.editorconfig
+E:\github\NET\Core\code\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.AssemblyInfoInputs.cache
+E:\github\NET\Core\code\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.AssemblyInfo.cs
+E:\github\NET\Core\code\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.csproj.CoreCompileInputs.cache
+E:\github\NET\Core\code\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.dll
+E:\github\NET\Core\code\01.ADF.Utility\obj\Debug\netstandard2.0\ADF.Utility.pdb
+E:\github\NET\Core\code\01.ADF.Utility\bin\Debug\netstandard2.0\ADF.Utility.deps.json
+E:\github\NET\Core\code\01.ADF.Utility\bin\Debug\netstandard2.0\ADF.Utility.dll
+E:\github\NET\Core\code\01.ADF.Utility\bin\Debug\netstandard2.0\ADF.Utility.pdb
