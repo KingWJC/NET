@@ -1,4 +1,5 @@
 ﻿using System;
+using code.sample;
 using static System.Console;
 
 namespace code
@@ -74,15 +75,19 @@ namespace code
             Deadlock.Test();
             */
 
-            // new ThreadIssues().RaceCondition();
-            // new ThreadIssues().DeadLock();
-            // new LockSample().Test();
-            // new WaitHandleSample().Test();
-            // new SemaphoreSample().Test();
-            // new EventSample().Test();
-            // new CoundDownSample().Test();
+            /* 同步锁
+            new ThreadIssues().RaceCondition();
+            new ThreadIssues().DeadLock();
+            new LockSample().Test();
+            new WaitHandleSample().Test();
+            new SemaphoreSample().Test();
+            new EventSample().Test();
+            new CoundDownSample().Test();
             new BarrierSample().Test();
-            ReadLine();
+            ReadLine();*/
+
+            // new ThreadSample().TestAbort();
+            new ThreadSample().TestInterrupt();
         }
     }
 
