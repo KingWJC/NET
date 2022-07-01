@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"]="NET Core跨平台";
+    CurrentUser userViewData = ViewData["User1"] as CurrentUser;
+    CurrentUser userViewBag = ViewBag.User;
+    CurrentUser userOther = ViewBag.User1;
+    CurrentUser userTemp = TempData["User"] as CurrentUser;
+    //CurrentUser userSession = JsonConvert.DeserializeObject<CurrentUser>(Context.Session.GetString("CurrentUserSession"));
+}
+
+<h1>View和Controller交互</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>ViewData:@(((CurrentUser)ViewData["User1"]).Name)</p>
+        <p>userViewData:@userViewData.Name</p>
+        <p>userViewBag:@userViewBag.Name</p>
+        <p>userOther:@userOther.Name</p>
+        <p>ViewBag:@(((CurrentUser)ViewBag.User).Name)</p>
+        <p>userTemp:@userTemp.Name</p>
+        <p>Model:@base.Model.Name</p>
+        @*<p>userSession:@userSession.Name</p>*@
+    </div>
+    <img src="~/Image/liuyan.jpg" />
+</div>
+

@@ -1,4 +1,4 @@
-# Swagger/OpenAPI介绍及使用
+# 介绍
 
 Swagger，也称为**OpenAPI**，解决了为Web API生成有用的文档和帮助页面的问题。
 
@@ -6,7 +6,7 @@ Swagger，也称为**OpenAPI**，解决了为Web API生成有用的文档和帮�
 
 <img src="images/1.png" style="zoom:80%;" />
 
-## .NET Core中使用Swagger
+# 使用
 
 Swashbuckle.AspNetCore 是一个开源项目，用于生成 [ASP.NET](http://asp.net/) Core Web API 的 Swagger 文档。
 
@@ -14,7 +14,7 @@ NSwag 是另一个用于生成 Swagger 文档并将 Swagger UI 或 ReDoc 集成�
 
 **Swagger UI** 提供了基于 Web 的 UI，它使用生成的 OpenAPI 规范提供有关服务的信息。
 
-### Swashbuckle
+## Swashbuckle
 
 [domaindrivendev/Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore#assign-explicit-operationids)
 
@@ -28,7 +28,7 @@ Swashbuckle 有三个主要组成部分：
 - [Swashbuckle.AspNetCore.SwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerGen/)：从路由、控制器和模型直接生成 `SwaggerDocument` 对象的 Swagger 生成器。 它通常与 Swagger 终结点中间件结合，以自动公开 Swagger JSON。
 - [Swashbuckle.AspNetCore.SwaggerUI](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerUI/)：Swagger UI 工具的嵌入式版本。 它解释 Swagger JSON 以构建描述 Web API 功能的可自定义的丰富体验。 它包括针对公共方法的内置测试工具。
 
-使用步骤：
+## 使用步骤：
 
 - 将 Swagger 生成器添加到 Startup.ConfigureServices 方法中的服务集合中
 
@@ -82,7 +82,7 @@ Swashbuckle 有三个主要组成部分：
               });
   ```
 
-- XML 注释j,手动将突出显示的行添加到 .csproj 文件：
+- XML 注释,手动将突出显示的行添加到 .csproj 文件：
 
   ```csharp
   <PropertyGroup>
@@ -238,3 +238,107 @@ Swashbuckle 有三个主要组成部分：
   ```
 
 - 打开 launchSettings.json 文件，把webapi项目的启动路径设置成 swagger。这样每次调试运行项目都会自动跳转到swagger帮助页面
+
+# 导出
+
+## 思路
+
+1. 获取Swagger生成的json文件
+2. 解析Json文件数据填充到Html的表格中
+3. 根据生成的html转work文档
+
+## 第三方包
+
+Swashbuckle.AspNetCore  ：生成接口的json文件
+
+RazorEngine.NetCore：数据填充到cshtml文件中，并编译成html
+
+Spire.Doc：静态文件转文档
+
+## 实现
+
+配置Swagger，并修改接口页面，增加文件导出按钮
+
+```C#
+// 开发环境下使用swagger中间件
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/V1/swagger.json", "My API V1");
+    //c.RoutePrefix = string.Empty;
+    c.DocumentTitle = "在线文档调试";
+    #region 自定义样式
+    //css 注入
+    c.InjectStylesheet("/css/swaggerdoc.css");
+    c.InjectStylesheet("/css/app.min.css");
+    //js 注入，在页面中增加导出文件的按钮和方法
+    c.InjectJavascript("/js/jquery.js");
+    c.InjectJavascript("/js/swaggerdoc.js");
+    c.InjectJavascript("/js/app.min.js");
+    #endregion
+});
+
+// 注册服务
+services.AddScoped<SpireDocHelper>();
+services.AddScoped<SwaggerGenerator>();
+services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("V1", new OpenApiInfo
+    {
+        Version = "V1",   //版本 
+        Title = $"接口文档",  //标题
+        Description = $"重症4.0接口服务",    //描述
+    });
+
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = System.IO.Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
+});
+```
+
+导出文档的方法
+
+```C#
+[Route("[controller]/[action]")]
+[ApiExplorerSettings(IgnoreApi = true)]
+public class SwaggerController: ControllerBase
+{
+    private readonly IWebHostEnvironment _webHostEnvironment;
+    private readonly SwaggerGenerator _swaggerGenerator;
+    private readonly SpireDocHelper _spireDocHelper;
+
+    public SwaggerController(IWebHostEnvironment hostingEnvironment,SpireDocHelper spireDocHelper,SwaggerGenerator swaggerGenerator)
+    {
+        _webHostEnvironment = hostingEnvironment;
+        _spireDocHelper = spireDocHelper;
+        _swaggerGenerator = swaggerGenerator;
+    }
+    
+    /// <summary>
+    /// 导出文件
+    /// </summary>
+    /// <param name="type">文件类型</param>
+    /// <param name="version">版本号V1</param>
+    /// <returns></returns>
+    [HttpGet]
+    public FileResult ExportWord(string type,string version)
+    {
+        string contenttype = string.Empty;
+        //1. 根据指定版本获取指定版本的json对象。
+        var model = _swaggerGenerator.GetSwagger(version); 
+        //2. 根据模板引擎生成html
+        var html = HtmlHelper.GeneritorSwaggerHtml($"{_webHostEnvironment.WebRootPath}\\SwaggerDoc.cshtml", model); 
+        /3.将html导出文件类型
+        var op = _spireDocHelper.SwaggerConversHtml(html, type, out contenttype); /
+        return File(op, contenttype, $"接口文档{type}");
+    }
+}
+```
+
+辅助类
+
+1. SwaggerDoc.cshtml模板文件
+2. swaggerdoc.js导出文件的脚本
+3. ByteHelper：文件流转为内存流
+4. HtmlHelper：将数据填充到静态页面中，生成html
+5. SpireDocHelper：

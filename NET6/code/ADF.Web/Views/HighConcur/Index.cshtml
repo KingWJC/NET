@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "高并发";
+}
+
+<div class="text-center">
+    <h3>ViewTime:@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff")</h3>
+    <h3>ActionTime:@base.ViewBag.Now.ToString("yyyy-MM-dd HH:mm:ss fff")</h3>
+    <h2>MemoryCace时间：@base.ViewBag.CustomMemoryCacheNow</h2>
+    <h2>DistributedCacheNow时间：@base.ViewBag.DistributedCacheNow</h2>
+    <h2>AOPCacheService时间：@base.ViewBag.ServiceTime</h2>
+    <h1>Index</h1>
+    <h2>浏览器地址：@base.ViewBag.BrowserUrl</h2>
+    <h2>内部监听地址：@base.ViewBag.InternalUrl</h2>
+    <h2>请求响应次数：@base.ViewBag.TotalCount</h2>
+    <h2>当前用户：@base.ViewBag.SessionUser</h2>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
